@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Cen Pojazdów</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .results {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+        .hidd {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Kalkulator Ceny Pojazdów</h2>
+        <p class="text-center">SantoriRPG</p>
+
+        <div class="mb-3">
+            <label for="inputValue" class="form-label">Wprowadź ostatnią znaną cenę pojazdu z salonu:</label>
+            <input type="number" id="inputValue" class="form-control" placeholder="Wprowadź liczbę" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Cenę możesz sprawdzić na DISCORDZIE "Rotacje Salonów SantoriRPG" (Kliknij <b><a href="https://discord.gg/tbvgemUVGa" target="_blank">TUTAJ</a></b>)</label><hr/>
+        </div>
+
+
+            
+        <h2>Tuning pojazdu:</h2>
+        
+
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input hidd" id="engineCapacityCheckbox" />
+            <label class="form-check-label" for="engineCapacityCheckbox">Pojemność silnika:</label><hr/>
+            <select id="engineCapacity" class="form-select">
+                <option value="1.2">1.2 (Brak kosztów dodatkowych)</option>
+                <option value="1.4">1.4</option>
+                <option value="1.6">1.6</option>
+                <option value="1.8">1.8</option>
+                <option value="2.0">2.0</option>
+                <option value="2.2">2.2</option>
+                <option value="2.4">2.4</option>
+                <option value="2.6">2.6</option>
+                <option value="2.8">2.8</option>
+                <option value="3.0">3.0</option>
+            </select>
+        </div>
+
+        <div class="form-check"><hr/>
+            <input type="checkbox" class="form-check-input hidd" id="cylinderCheckbox" />
+            <label class="form-check-label" for="cylinderCheckbox">Wybierz ilość cylindrów:</label>
+            <select id="cylinderType" class="form-select">
+                <option value="v4">V4 (Brak kosztów dodatkowych)</option>
+                <option value="v6">V6 (<span class="fw-bold">Montaż:</span> 250,000 / <span class="fw-bold">Demontaż:</span> 75,000)</option>
+                <option value="v8">V8 (<span class="fw-bold">Montaż:</span> 500,000 / <span class="fw-bold">Demontaż:</span> 150,000)</option>
+            </select>
+        </div><hr/>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="300000" data-value2="65000" />
+            <label class="form-check-label">US1 (<span class="fw-bold">Montaż:</span> 300,000 / <span class="fw-bold">Demontaż:</span> 65,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="400000" data-value2="100000" />
+            <label class="form-check-label">US2 (<span class="fw-bold">Montaż:</span> 400,000 / <span class="fw-bold">Demontaż:</span> 100,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="500000" data-value2="185000" />
+            <label class="form-check-label">US3 (<span class="fw-bold">Montaż:</span> 500,000 / <span class="fw-bold">Demontaż:</span> 185,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="1300000" data-value2="350000" />
+            <label class="form-check-label">US4 (<span class="fw-bold">Montaż:</span> 1,300,000 / <span class="fw-bold">Demontaż:</span> 350,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="700000" data-value2="150000" />
+            <label class="form-check-label">Turbosprężarka (<span class="fw-bold">Montaż:</span> 700,000 / <span class="fw-bold">Demontaż:</span> 150,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="800000" data-value2="200000" />
+            <label class="form-check-label">Chip Tuning (<span class="fw-bold">Montaż:</span> 800,000 / <span class="fw-bold">Demontaż:</span> 200,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="2000000" data-value2="1000000" />
+            <label class="form-check-label">Regulacja Mocy (<span class="fw-bold">Montaż:</span> 2,000,000 / <span class="fw-bold">Demontaż:</span> 1,000,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="2000000" data-value2="50000" />
+            <label class="form-check-label">Regulacja Trakcji (<span class="fw-bold">Montaż:</span> 2,000,000 / <span class="fw-bold">Demontaż:</span> 50,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="500000" data-value2="100000" />
+            <label class="form-check-label">Regulacja Hamulców (<span class="fw-bold">Montaż:</span> 500,000 / <span class="fw-bold">Demontaż:</span> 100,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="500000" data-value2="100000" />
+            <label class="form-check-label">Regulacja Masy (<span class="fw-bold">Montaż:</span> 500,000 / <span class="fw-bold">Demontaż:</span> 100,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="150000" data-value2="75000" />
+            <label class="form-check-label">Gwintowane Zawieszenie (<span class="fw-bold">Montaż:</span> 150,000 / <span class="fw-bold">Demontaż:</span> 75,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="1000000" data-value2="200000" />
+            <label class="form-check-label">Regulacja Kątu Skrętu (<span class="fw-bold">Montaż:</span> 1,000,000 / <span class="fw-bold">Demontaż:</span> 200,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="1000000" data-value2="500000" />
+            <label class="form-check-label">ABS (<span class="fw-bold">Montaż:</span> 1,000,000 / <span class="fw-bold">Demontaż:</span> 500,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="1500000" data-value2="1400000" />
+            <label class="form-check-label">Przyciemnione Szyby (<span class="fw-bold">Montaż:</span> 1,500,000 / <span class="fw-bold">Demontaż:</span> 1,400,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="1500000" data-value2="1400000" />
+            <label class="form-check-label">Przyciemnione Lampy (<span class="fw-bold">Montaż:</span> 1,500,000 / <span class="fw-bold">Demontaż:</span> 1,400,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="2000000" data-value2="1000000" />
+            <label class="form-check-label">Szerokość Opon Przód (<span class="fw-bold">Montaż:</span> 2,000,000 / <span class="fw-bold">Demontaż:</span> 1,000,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="2000000" data-value2="1000000" />
+            <label class="form-check-label">Szerokość Opon Tył (<span class="fw-bold">Montaż:</span> 2,000,000 / <span class="fw-bold">Demontaż:</span> 1,000,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="2000000" data-value2="1000000" />
+            <label class="form-check-label">RGB (<span class="fw-bold">Montaż:</span> 2,000,000 / <span class="fw-bold">Demontaż:</span> 1,000,000-2,000,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="1000000" data-value2="500000" />
+            <label class="form-check-label">Licznik (<span class="fw-bold">Montaż:</span> 1,000,000 / <span class="fw-bold">Demontaż:</span> 500,000-1,000,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="12500000" data-value2="7000000" />
+            <label class="form-check-label">PaintJob (<span class="fw-bold">Montaż:</span> 12,500,000 / <span class="fw-bold">Demontaż:</span> 7,000,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="150000" data-value2="75000" />
+            <label class="form-check-label">LPG (<span class="fw-bold">Montaż:</span> 150,000 / <span class="fw-bold">Demontaż:</span> 75,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="250000" data-value2="100000" />
+            <label class="form-check-label">Pojemność Baterii (<span class="fw-bold">Montaż:</span> 250,000 / <span class="fw-bold">Demontaż:</span> 100,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="10000000" data-value2="5000000" />
+            <label class="form-check-label">Ulepszenie Butli Nitro (Max 15L) (<span class="fw-bold">Montaż:</span> 10,000,000 / <span class="fw-bold">Demontaż:</span> 5,000,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="200000" data-value2="100000" />
+            <label class="form-check-label">Napęd (<span class="fw-bold">Montaż:</span> 200,000 / <span class="fw-bold">Demontaż:</span> 100,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="2500000" data-value2="1250000" />
+            <label class="form-check-label">Taxometr (<span class="fw-bold">Montaż:</span> 2,500,000 / <span class="fw-bold">Demontaż:</span> 1,250,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="550000" data-value2="250000" />
+            <label class="form-check-label">Neony (<span class="fw-bold">Montaż:</span> 550,000 / <span class="fw-bold">Demontaż:</span> 250,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input checkbox" data-value1="650000" data-value2="300000" />
+            <label class="form-check-label">Licznik Driftu (<span class="fw-bold">Montaż:</span> 650,000 / <span class="fw-bold">Demontaż:</span> 300,000)</label><hr/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="nitroCheckbox" />
+            <label class="form-check-label" for="nitroCheckbox">Nitro 5L (<span class="fw-bold">Montaż:</span> 50,000,000)</label>
+        </div>
+        <div id="nitroUpgrade" class="hidden">
+            <label for="nitroCapacity">Wybierz pojemność butli nitro:</label>
+            <select id="nitroCapacity" class="form-select">
+                <option value="5">5L (Brak kosztów dodatkowych)</option>
+                <option value="10">10L (<span class="fw-bold">Montaż:</span> 10,000,000 / <span class="fw-bold">Demontaż:</span> 5,000,000)</option>
+                <option value="15">15L (<span class="fw-bold">Montaż:</span> 20,000,000 / <span class="fw-bold">Demontaż:</span> 10,000,000)</option>
+            </select><hr/>
+        </div>
+        <!-- Powtórz dla wszystkich pozostałych opcji -->
+
+        <button id="calculateButton" class="btn btn-primary">Policz</button>
+
+        <div class="results">
+            <p>Całkowity koszt pojazdu (cena pojazdu z salonu + koszt montażu wszystkich części): <span id="result1">0</span></p>
+            <p>Przewidywana wartość pojazdu (cena pojazdu z salonu + koszt demontażu wszystkich części): <span id="result2">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('calculateButton').addEventListener('click', function () {
+            const inputValue = parseInt(document.getElementById('inputValue').value) || 0;
+
+            const checkboxes = document.querySelectorAll('.checkbox:checked');
+
+            let totalValue1 = inputValue;
+            let totalValue2 = inputValue;
+
+            const engineCapacity = parseFloat(document.getElementById('engineCapacity').value);
+            const baseCost1 = 220000;
+            const baseCost2 = 50000;
+
+            if (engineCapacity > 1.2) {
+                const steps = (engineCapacity - 1.2) / 0.2;
+                totalValue1 += steps * baseCost1;
+                totalValue2 += steps * baseCost2;
+            }
+
+            checkboxes.forEach(checkbox => {
+                const value1 = parseInt(checkbox.getAttribute('data-value1'));
+                const value2 = parseInt(checkbox.getAttribute('data-value2'));
+
+                totalValue1 += value1;
+                totalValue2 += value2;
+            });
+
+            // Nitro and upgrade logic
+            const nitroCheckbox = document.getElementById('nitroCheckbox');
+            if (nitroCheckbox.checked) {
+                totalValue1 += 50000000; // Nitro 5L
+                totalValue2 += 50000000;
+
+                const nitroCapacity = parseInt(document.getElementById('nitroCapacity').value);
+                if (nitroCapacity === 5) {
+                    totalValue1 += 0; // Nitro 5L
+                    totalValue2 += 0;
+                } else if (nitroCapacity === 10) {
+                    totalValue1 += 10000000; // Nitro 10L
+                    totalValue2 += 5000000;
+                } else if (nitroCapacity === 15) {
+                    totalValue1 += 20000000; // Nitro 15L
+                    totalValue2 += 10000000;
+                }
+            }
+
+            // Cylinders logic
+            const cylinderCheckbox = document.getElementById('cylinderCheckbox');
+                const cylinderType = document.getElementById('cylinderType').value;
+                if (cylinderType === 'v6') {
+                    totalValue1 += 250000;
+                    totalValue2 += 75000;
+                } else if (cylinderType === 'v8') {
+                    totalValue1 += 500000;
+                    totalValue2 += 150000;
+                }
+
+            document.getElementById('result1').textContent = totalValue1.toLocaleString();
+            document.getElementById('result2').textContent = totalValue2.toLocaleString();
+        });
+
+        document.getElementById('nitroCheckbox').addEventListener('change', function () {
+            const nitroUpgrade = document.getElementById('nitroUpgrade');
+            if (this.checked) {
+                nitroUpgrade.classList.remove('hidden');
+            } else {
+                nitroUpgrade.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('cylinderCheckbox').addEventListener('change', function () {
+            const cylinderTypeSelect = document.getElementById('cylinderType');
+            if (this.checked) {
+                cylinderTypeSelect.classList.remove('hidden');
+            } else {
+                cylinderTypeSelect.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
