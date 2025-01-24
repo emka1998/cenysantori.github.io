@@ -204,7 +204,6 @@
                 <option value="15">15L (<span class="fw-bold">Montaż:</span> 20,000,000 / <span class="fw-bold">Demontaż:</span> 10,000,000)</option>
             </select><hr/>
         </div>
-        <!-- Powtórz dla wszystkich pozostałych opcji -->
 <br />
         <button id="calculateButton" class="btn btn-primary">Policz</button>
 
@@ -251,26 +250,24 @@
                 totalValue2 += value2;
             });
 
-            // Nitro and upgrade logic
             const nitroCheckbox = document.getElementById('nitroCheckbox');
             if (nitroCheckbox.checked) {
-                totalValue1 += 50000000; // Nitro 5L
+                totalValue1 += 50000000; 
                 totalValue2 += 50000000;
 
                 const nitroCapacity = parseInt(document.getElementById('nitroCapacity').value);
                 if (nitroCapacity === 5) {
-                    totalValue1 += 0; // Nitro 5L
+                    totalValue1 += 0; 
                     totalValue2 += 0;
                 } else if (nitroCapacity === 10) {
-                    totalValue1 += 10000000; // Nitro 10L
+                    totalValue1 += 10000000;
                     totalValue2 += 5000000;
                 } else if (nitroCapacity === 15) {
-                    totalValue1 += 20000000; // Nitro 15L
+                    totalValue1 += 20000000; 
                     totalValue2 += 10000000;
                 }
             }
 
-            // Cylinders logic
             const cylinderCheckbox = document.getElementById('cylinderCheckbox');
                 const cylinderType = document.getElementById('cylinderType').value;
                 if (cylinderType === 'v6') {
