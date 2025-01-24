@@ -46,10 +46,9 @@
 
 
             
-        <h2>Tuning pojazdu:</h2>
         
 
-
+<br /><center> <p><span class="fw-bold">Tuning mechaniczny:</span></p> </center><br />
         <div class="form-check">
             <input type="checkbox" class="form-check-input hidd" id="engineCapacityCheckbox" />
             <label class="form-check-label" for="engineCapacityCheckbox">Pojemność silnika:</label><hr/>
@@ -76,6 +75,8 @@
                 <option value="v8">V8 (<span class="fw-bold">Montaż:</span> 500,000 / <span class="fw-bold">Demontaż:</span> 150,000)</option>
             </select>
         </div><hr/>
+		
+		
 
         <div class="form-check">
             <input type="checkbox" class="form-check-input checkbox" data-value1="300000" data-value2="65000" />
@@ -101,6 +102,8 @@
             <input type="checkbox" class="form-check-input checkbox" data-value1="800000" data-value2="200000" />
             <label class="form-check-label">Chip Tuning (<span class="fw-bold">Montaż:</span> 800,000 / <span class="fw-bold">Demontaż:</span> 200,000)</label><hr/>
         </div>
+		
+<br /><center> <p><span class="fw-bold">Konfiguracja:</span></p> </center><br />
         <div class="form-check">
             <input type="checkbox" class="form-check-input checkbox" data-value1="2000000" data-value2="1000000" />
             <label class="form-check-label">Regulacja Mocy (<span class="fw-bold">Montaż:</span> 2,000,000 / <span class="fw-bold">Demontaż:</span> 1,000,000)</label><hr/>
@@ -129,6 +132,8 @@
             <input type="checkbox" class="form-check-input checkbox" data-value1="1000000" data-value2="500000" />
             <label class="form-check-label">ABS (<span class="fw-bold">Montaż:</span> 1,000,000 / <span class="fw-bold">Demontaż:</span> 500,000)</label><hr/>
         </div>
+		
+<br /><center> <p><span class="fw-bold">Tuning wizualny:</span></p> </center><br />
         <div class="form-check">
             <input type="checkbox" class="form-check-input checkbox" data-value1="1500000" data-value2="1400000" />
             <label class="form-check-label">Przyciemnione Szyby (<span class="fw-bold">Montaż:</span> 1,500,000 / <span class="fw-bold">Demontaż:</span> 1,400,000)</label><hr/>
@@ -157,6 +162,8 @@
             <input type="checkbox" class="form-check-input checkbox" data-value1="12500000" data-value2="7000000" />
             <label class="form-check-label">PaintJob (<span class="fw-bold">Montaż:</span> 12,500,000 / <span class="fw-bold">Demontaż:</span> 7,000,000)</label><hr/>
         </div>
+		
+<br /><center> <p><span class="fw-bold">Dodatki:</span></p> </center><br />
         <div class="form-check">
             <input type="checkbox" class="form-check-input checkbox" data-value1="150000" data-value2="75000" />
             <label class="form-check-label">LPG (<span class="fw-bold">Montaż:</span> 150,000 / <span class="fw-bold">Demontaż:</span> 75,000)</label><hr/>
@@ -187,7 +194,7 @@
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="nitroCheckbox" />
-            <label class="form-check-label" for="nitroCheckbox">Nitro 5L (<span class="fw-bold">Montaż:</span> 50,000,000)</label>
+            <label class="form-check-label" for="nitroCheckbox">Nitro 5L (<span class="fw-bold">Montaż:</span> 50,000,000) - żeby zmienić pojemnośc butli trzeba zaznaczyć tą opcje</label> 
         </div>
         <div id="nitroUpgrade" class="hidden">
             <label for="nitroCapacity">Wybierz pojemność butli nitro:</label>
@@ -203,7 +210,16 @@
 
         <div class="results">
             <p>Całkowity koszt pojazdu (cena pojazdu z salonu + koszt montażu wszystkich części): <span id="result1">0</span></p>
-            <p>Przewidywana wartość pojazdu (cena pojazdu z salonu + koszt demontażu wszystkich części): <span id="result2">0</span></p>
+            <p>Przewidywana wartość pojazdu (cena pojazdu z salonu + koszt demontażu wszystkich części): <span id="result2">0</span></p><br /><br /><br />
+			<h1>Legenda tuningu:</h1>
+
+<ul>
+  <li>PFT - Prawie Full Tune</li>
+  <li>FT - Full Tune - Tune Mechaniczny + Konfig</li>
+  <li>PTFT - Prawie Total Full Tune</li>
+  <li>TFT - Total Full Tune - Wszystkie Możliwe ulepszenia pojazdu</li>
+  <li>Wizu - Tune Wizualny</li>
+</ul>
         </div>
     </div>
 
